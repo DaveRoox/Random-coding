@@ -3,6 +3,8 @@
 
 /*
 
+Author: Davide Russo [davexrusso@gmail.com]
+
 Example of Brainfuck (https://en.wikipedia.org/wiki/Brainfuck) interpreter written in C.
 
 The algorithm ignores symbols that do not belong to the language, with the exception for '_'
