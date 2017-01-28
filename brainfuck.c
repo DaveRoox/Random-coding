@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <cstdlib>
 
+/*
+
+Example of Brainfuck (https://en.wikipedia.org/wiki/Brainfuck) interpreter written in C.
+
+The algorithm ignores symbols that do not belong to the language, with the exception for '_'
+that can be used in order to print the integer representation of the char instead of its ASCII symbol.
+
+See the examples in the main program.
+
+*/
+
 void brainfuckInterpreter(const char *program) {
 	#define TAPE_SIZE 1000
 	char command, *const tape = (char *const)calloc(TAPE_SIZE, sizeof(char));
