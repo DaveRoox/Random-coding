@@ -30,8 +30,8 @@ void brainfuckInterpreter(const char *program) {
 		else if(command == '[') {
 			if(!tape[activeCell]) {
 				brackets = 1;
-				while(program[++programIndex])
-					if(program[programIndex]== ']' && !--brackets) break;
+				while(++programIndex < TAPE_SIZE && program[programIndex])
+					if(program[programIndex] == ']' && !--brackets) break;
 					else if(program[programIndex] == '[') brackets++;
 			}
 		}
@@ -43,7 +43,7 @@ void brainfuckInterpreter(const char *program) {
 					else if(program[programIndex] == ']') brackets++;
 			}
 		}
-	} while(programIndex >= 0 && program[++programIndex]);
+	} while(0 <= programIndex && programIndex < TAPE_SIZE && program[++programIndex]);
 	free(tape);
 }
 
